@@ -1,4 +1,26 @@
-name: deploy.yml
+name: CD - Deploy to EC2 AWS
 on:
+  push:
+    branches:
+      - main
 
 jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Deploy to EC2 using SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USER }}
+          key: ${{ secrets.EC2_SSH_KEY }}
+          script:
+            docker pull difervi/devops-kata:latest
+            docker stop devops-kata || true
+            docker rm devops-kata || true
+            docker run -d --name devops-kata difervi/devops-kata:latest
+
