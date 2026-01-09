@@ -18,7 +18,7 @@ jobs:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_SSH_KEY }}
-          script:
+          script: |
             docker pull difervi/devops-kata:latest
             docker stop devops-kata || true
             docker rm devops-kata || true
