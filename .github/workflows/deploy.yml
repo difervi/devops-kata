@@ -33,5 +33,5 @@ jobs:
             docker run -d \
               --name devops-kata \
               --label: "com.datadoghq.tags=service:devops-kata,env:prod,team:devops,version:latest" \
-              difervi/devops-kata:latest
+              difervi/devops-kata:latest \
               tail -f /dev/null
