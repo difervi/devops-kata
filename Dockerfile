@@ -10,6 +10,8 @@ COPY tests tests
 
 ENV PYTHONPATH=/app
 
+
+
 CMD ["pytest", "-v"]
 
 
