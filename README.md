@@ -1,3 +1,3 @@
   ##  Tarea de Git
-* **Estudiante:** Alexander Villamizar
+* **Estudiantes:** Alexander Villamizar, Diego Ojeda
 * **Universidad:** Politecnico Gran Colombiano
